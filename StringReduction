@@ -1,0 +1,48 @@
+/* package whatever; // don't place package name! */
+
+import java.util.Scanner;
+
+
+/* Name of the class has to be "Main" only if the class is public. */
+class StringMinLength
+{
+	public static String takeInput()
+	{
+		String str;
+		System.out.println("Enter the string");
+		Scanner k=new Scanner(System.in);
+		str=k.nextLine();
+		return str;
+		
+	}
+	public static void outputString(String str)
+	{
+		System.out.println("The String is ");
+		System.out.print(str);
+	}
+	public static void reduceString(String str)
+	{
+		char str1[]=new char[str.length()];
+		int i=0,j=0;
+	while(i<(str.length()-1)&&j<str1.length)	
+	{
+		if(str.charAt(i)!=str.charAt(i+1))
+		{
+			str1[j]=str.charAt(i);
+		    str1[j+1]=str.charAt(i+1);
+		j++;
+		}
+	i++;
+	}
+	 System.out.println("");
+	 System.out.print(str1);
+	}
+	
+	public static void main (String[] args)
+	{
+    String str;
+	str=takeInput();
+	outputString(str);
+	reduceString(str);
+	}
+}
